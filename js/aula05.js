@@ -20,11 +20,18 @@ window.onload = function () {
     bt[0].onclick = function () {
         //alert('sadsa');
         //(se()    senão() ) senão se()
-        if (numero > 10 ) {
+        tagSpan.style.color ="red";
+        tagSpan.style.border = "thick solid #0000FF";
+        // (e) &&   || (ou)
+         if (numero[0].value > 10 && numero[0].value < 12) {
             // pegar refencia da tag span
+            tagSpan.innerHTML = "MAIOR";
+        } else{
 
+           tagSpan.innerHTML = "MENOR";
         }
-
+        // LIMPAR COMPO
+        numero[0].value ="";     
 
     }
 
