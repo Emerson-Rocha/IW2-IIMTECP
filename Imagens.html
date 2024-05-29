@@ -15,29 +15,61 @@
             width: 400px;
             height: 300px;
         }
-        #img01,  #img02,  #img03{
+
+        #img01,
+        #img02,
+        #img03 {
             margin: 1px;
             width: 130px;
             height: 100px;
             float: left;
         }
-        img{ 
+
+        img {
             width: 100%;
             height: 100%;
         }
     </style>
-   
+
     <script>
-   window.onload=()=>{
-     // nomes das imagens com a extensão
-     let arrayImagens = [ "img01.jpg","img02.jpg","img03.jpg"];
+        let cont = 0;
+        let texto = setInterval("Testa()", 1000);
+     
+        function Testa(){
+            document.write(cont++);
+        }
 
-     let img = document.get
+        
+         let arrayImagens = ["img01.jpg", "img02.jpg", "img03.jpg"];
+        window.onload = () => {
 
+         
+            // nomes das imagens com a extensão
+          
+            let img = document.getElementsByTagName('img');
+            img[0].src = "img/" + arrayImagens[0];
+            img[1].src = "img/" + arrayImagens[0];
+            img[2].src = "img/" + arrayImagens[1];
+            img[3].src = "img/" + arrayImagens[2];           
+        }
+        
+        function img02() {
+            let img = document.getElementsByTagName('img');
+            img[0].src = "img/" + arrayImagens[1];
+       
+        }
 
-
-
-   }
+        function img01() {
+            let img = document.getElementsByTagName('img');
+            img[0].src = "img/" + arrayImagens[0];
+       
+        }
+        function img03() {
+            let img = document.getElementsByTagName('img');
+            img[0].src = "img/" + arrayImagens[2];
+       
+        }
+ 
 
 
 
@@ -51,18 +83,31 @@
 <body>
     <section>
         <div id="central">
-            <img src="img/img01.jpg"/>
+            <img src="" />
         </div>
-        <div id="img01">
-            <img src=""/>
+        <div id="img01" onmouseover="img01()">
+            <img src="" />
         </div>
-        <div id="img02">
-            <img src=""/>
+        <div id="img02" onmouseover="img02()">
+            <img src="" />
         </div>
-        <div id="img03">
-            <img src=""/>
+        <div id="img03" >
+            <img src="" />
         </div>
     </section>
 </body>
+  <script>
+    
+    let div3 = document.getElementById('img03');
+         div3.onmouseover = ()=>{
 
+             img03();
+
+        }
+
+        div3.addEventListener('mouseover' , 
+            img03(), false
+        );
+
+  </script>
 </html>
